@@ -1,0 +1,47 @@
+page-subcategory {
+    #main-card{
+        width: auto;
+        height: 20%;
+        background-color: #ef5350;
+        margin: 0px 0px 1px 0px;
+        text-align: center;
+    }
+    .item-title{
+        display: inline;
+    }
+    .card h1{
+        font-size: 2.5em;
+        color: #fff;
+        position: ab;
+        top: 30%;
+        left: 30%;
+    }
+    .button[icon-only] {
+        padding: 0;
+        min-width: .9em;
+        float: right;
+        margin-left: 10px;
+    }
+    [icon-only] ion-icon {
+        padding: 0 0.5em;
+        font-size: 1.5em;
+        line-height: .67;
+        padding: 5px 10px;
+        pointer-events: none;
+        font-weight: bold;
+    }
+    .price{
+        color: #ef5350;
+    }
+    .amt-btn {
+        border-radius: 2px;
+        overflow: hidden;
+        height: 5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ef5350;
+        background-color: #fff;
+        margin: 0;
+    }
+}

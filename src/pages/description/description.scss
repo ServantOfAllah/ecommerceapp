@@ -1,0 +1,66 @@
+page-description {
+    .item_info{
+        text-align: center;
+        //margin: 0 auto;
+    }
+    .dollarsign{
+        font-size: 1.5em;
+        color: #ef5350;
+    }
+    .itemPrice{
+        color: #ef5350;
+        font-size: 1.5em;
+        float: center;
+        padding-top: 0;
+        margin-bottom: 10px;
+    }
+    .itemName{
+        margin-top: 10px;
+        font-weight: bold;
+        color: #1D1D1D;
+        font-size: 1.3em;
+    }
+    .itemNo{
+        font-size: 0.8em;
+        font-weight: 200;
+        color: #1D1D1D;
+    }
+    .topcard{
+        margin-bottom: 0px;
+        padding: 0 40px;
+    }
+    .cirleDiv{
+        border-radius: 50%;
+        margin: 0 auto;
+        float: center;
+        border:1px solid #ef5350;
+        //stroke: #ef5350;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .amt-btn{
+        float: left;
+        margin: 0;
+        font-weight: 300;
+    }
+    .save{
+        background-color: #fff;
+        color: #ef5350;
+        font-size: 1.7em;
+        padding: 10px
+    }
+    .itemDesc{
+        font-weight: normal;
+        padding: 5px 20px;
+        padding-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .bottom_bar
+    {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}

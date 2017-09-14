@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar color="topbar">
+      <ion-title></ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="closeModal()"> <ion-icon name='close'></ion-icon> </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+
+    <ion-card class="topcard" *ngFor="let prod of singleProduct">
+      <img class="img1" [src]="prod.featured_src"/>
+    
+      <p class="itemName">{{prod.title}}</p>
+      <p class="itemNo">item NO: JWESR1245456</p>
+      <p class="itemDesc" [innerHTML]="prod.description"></p>
+      <p class="itemPrice">{{prod.price}}</p>
+    </ion-card>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Type</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Full</ion-option>
+            <ion-option value="n64">Half</ion-option>
+            <ion-option value="ps">Quarter</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+
+      <ion-footer>
+          <div class="bottom_bar">
+            <button class="amt-btn" ion-button color="danger">add to cart</button>
+            <button class="amt-btn save" ion-button>
+                <!-- <span>Save</span> -->
+                <ion-icon name="ios-heart-outline"></ion-icon>
+              </button>
+          </div>
+      </ion-footer>
+
+</ion-content>

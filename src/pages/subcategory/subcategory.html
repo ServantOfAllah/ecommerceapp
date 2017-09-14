@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="topbar">
+    <ion-title>Refreshing</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card id="main-card">
+    <h1 class="card-title"></h1>
+  </ion-card>
+
+  <ion-card *ngFor="let product of products">
+      <ion-item>
+        <ion-avatar item-start (click)="openModal(product)">
+          <img [src]="product.featured_src">
+        </ion-avatar>
+        <h2>{{product.title}}</h2>
+        <p [innerHTML]="product.description"></p>
+        <p class="item-title price" [innerHTML]="product.price"></p>
+      </ion-item>
+    </ion-card>
+
+</ion-content>
