@@ -11,14 +11,14 @@ page-description {
         color: #ef5350;
         font-size: 1.5em;
         float: center;
-        padding-top: 0;
+        padding: 5px 0 15px 0; 
         margin-bottom: 10px;
     }
     .itemName{
         margin-top: 10px;
-        font-weight: bold;
+        font-weight: normal;
         color: #1D1D1D;
-        font-size: 1.3em;
+        font-size: 1.3em;  
     }
     .itemNo{
         font-size: 0.8em;
@@ -26,9 +26,36 @@ page-description {
         color: #1D1D1D;
     }
     .topcard{
-        margin-bottom: 0px;
-        padding: 0 40px;
+        margin: 0px;
+        padding: 0;
+        text-align: center;
+        width: 100%;
     }
+    .img1{
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .details{
+        //padding-bottom: 30px;
+    }
+    .header-details{
+        padding-bottom: 0px;
+    }
+    .list-header{
+        //padding-left: 15px;
+        margin-bottom: 0;
+        font-size: 1.0em;
+        color: #fff;
+        background-color: #ef5350;
+        font-weight: 300;
+    }
+    .item-details{
+        font-size: 0.8em;
+        color: #1D1D1D;
+        font-weight: 200;
+    }
+
     .cirleDiv{
         border-radius: 50%;
         margin: 0 auto;
@@ -52,9 +79,8 @@ page-description {
     }
     .itemDesc{
         font-weight: normal;
-        padding: 5px 20px;
-        padding-bottom: 0;
         font-size: 0.9em;
+        padding: 5px 0 10px 0;
     }
 
     .bottom_bar

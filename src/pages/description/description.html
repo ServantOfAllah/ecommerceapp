@@ -1,22 +1,25 @@
 <ion-header>
     <ion-navbar color="topbar">
-      <ion-title></ion-title>
+      <ion-title *ngFor="let product of productDetails">{{product.title}}</ion-title>
       <ion-buttons end>
           <button ion-button icon-only (click)="closeModal()"> <ion-icon name='close'></ion-icon> </button>
-        </ion-buttons>
+      </ion-buttons>
     </ion-navbar>
   </ion-header>
 
 
 <ion-content>
-
-    <ion-card class="topcard" *ngFor="let prod of singleProduct">
-      <img class="img1" [src]="prod.featured_src"/>
-    
-      <p class="itemName">{{prod.title}}</p>
+    <ion-card class="topcard" *ngFor="let product of productDetails">
+      <img class="img1" [src]="product.featured_src"/>
+      <p class="itemName">{{product.title}}</p>
       <p class="itemNo">item NO: JWESR1245456</p>
-      <p class="itemDesc" [innerHTML]="prod.description"></p>
-      <p class="itemPrice">{{prod.price}}</p>
+      <p class="itemDesc" [innerHTML]="product.description"></p>
+      <ion-chip>
+          <ion-label color="primary">{{product.categories}}</ion-label>
+      </ion-chip>
+      <p class="itemPrice" [innerHTML]="product.price_html"></p>
+      <!-- <h4>Categories:</h4> -->
+      
     </ion-card>
 
     <ion-list>
@@ -30,13 +33,40 @@
         </ion-item>
     </ion-list>
 
+    <!-- <ion-list class="details" *ngFor="let product of productDetails" (click)="toggleDiv(product)">
+      <ion-list-header no-lines>
+        <ion-icon item-right [name]="product.icon"></ion-icon>
+        <span>Details</span>
+      </ion-list-header>
+      <ion-item *ngIf="product.showDetails">
+        <h5 class="item-details">Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{product.title}}</h5>
+        <h5 class="item-details">Rating &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{product.average_rating}}</h5>
+      </ion-item>
+    </ion-list> -->
+
+    <!-- <ion-grid>
+        <ion-row>
+          <ion-col>
+            1 of 3
+          </ion-col>
+          <ion-col>
+            2 of 3 (wider)
+          </ion-col>
+          <ion-col>
+            3 of 3
+          </ion-col>
+        </ion-row>
+        </ion-grid> -->
+
       <ion-footer>
           <div class="bottom_bar">
-            <button class="amt-btn" ion-button color="danger">add to cart</button>
-            <button class="amt-btn save" ion-button>
-                <!-- <span>Save</span> -->
+            <button ion-button icon-left block color="topbar" class="amt-btn" (click)="addToCart(object)">
+              <ion-icon name="basket">&nbsp; add to cart</ion-icon>
+          </button>
+            <!-- <button class="amt-btn save" ion-button>
+                <span>Save</span>
                 <ion-icon name="ios-heart-outline"></ion-icon>
-              </button>
+              </button> -->
           </div>
       </ion-footer>
 

@@ -14,6 +14,9 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
+  goTocart(){
+    this.navCtrl.push('CartPage');
+  }
 
   gotofresh(){
     this.navCtrl.push('SubcategoryPage');

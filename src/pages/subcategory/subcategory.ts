@@ -29,8 +29,9 @@ export class SubcategoryPage {
       consumerSecret: 'cs_c08ff79c1801e705c866858ddb2889d40be5a687'
     });
     this.woocommerce.getAsync('products').then((data) => {
-      console.log(JSON.parse(data.body).products);
       this.products = JSON.parse(data.body).products;
+      console.log("all products ",this.products);
+      console.log(typeof(this.products));
 
       // let temp: any[] = JSON.parse(data.body).products;
       // console.log('temp array', temp);
@@ -54,12 +55,17 @@ export class SubcategoryPage {
 
   }
 
+  goTocart(){
+    this.navCtrl.push('CartPage');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SubcategoryPage');
   }
+  openModal(allProducts){
 
-  openModal(productDetail){
-    const full_desc = this.modalCtrl.create('DescriptionPage', {"product": productDetail});
+    const full_desc = this.modalCtrl.create('DescriptionPage', {"product": allProducts});
     full_desc.present();
+    console.log("all product from cat page: ", typeof(allProducts));
   }
 }
