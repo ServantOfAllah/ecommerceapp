@@ -64,7 +64,7 @@ export class DescriptionPage {
             added = 1; 
           }
         }
-        if(added == 0){
+        if(added === 0){
           data.push({
             'product': this.product,
             'qtn': 1,

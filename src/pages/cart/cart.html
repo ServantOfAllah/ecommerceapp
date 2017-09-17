@@ -1,13 +1,95 @@
 <ion-header>
     <ion-navbar color="topbar">
       <ion-title>Cart</ion-title>
-      <ion-fab top right (click)="goTocart()" >
-          <button ion-fab mini class="cart"><ion-icon name="basket"></ion-icon></button>
-      </ion-fab>
+      
     </ion-navbar>
   </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-fab top right edge (click)="goTocart()" >
+    <button ion-fab mini class="cart" color="danger"><ion-icon name="cart"></ion-icon></button>
+  </ion-fab>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center">Your cart description</ion-col>
+      </ion-row>
+      <ion-row [hidden] = "!showEmptyMsg">
+        <ion-col style="text-align: center">They are no product in your cart</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of cartItems; let i = index">
+
+      <ion-item>
+
+        <ion-avatar item-start>
+          <img [src]="item.product.featured_src" />
+        </ion-avatar>
+        <h2>{{ item.product.title }}</h2>
+        <p [innerHTML]="item.product.description"></p>
+        <h2>AED: {{item.product.price}}</h2>
+        <h2>QTN: {{item.qtn}}</h2>
+        <ion-icon name='close-circle' color='danger' item-end (click)="removeFromCart(item, i)"></ion-icon>
+
+        <div>
+          <button ion-button color="danger" outline icon-only class="inc" (click)="incItemQtn(item)">
+              <ion-icon name="add"></ion-icon>
+          </button>
+
+          <!-- <p class="inc inc_p"> {{item.qtn}} </p> -->
+
+          <button ion-button color="primary" outline icon-only class="inc" (click)="decItemQtn(item)">
+              <ion-icon name="remove"></ion-icon>
+          </button>
+        </div>
+
+      </ion-item>
+
+      <ion-item-options side='right'>
+        <button ion-button color="danger" (click)="removeFromCart(item, i)">
+          <ion-icon name="trash"></ion-icon>
+          delete
+        </button>
+        <button ion-button>
+            <ion-icon name="heart"></ion-icon>
+            save
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-grid>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-1> </ion-col>
+          <ion-col col-4> <b>Total</b> </ion-col>
+          <ion-col col-1> </ion-col>
+          <ion-col col-1> </ion-col>
+          <ion-col col-4 style="text-align:right"> aed <b>{{ totalAmt }}</b> </ion-col>
+          <ion-col col-1></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-grid>
+
+  <ion-footer>
+      <div class="bottom_bar">
+        <button ion-button icon-left block color="topbar" class="amt-btn">
+          <ion-icon name="md-checkmark-circle-outline">&nbsp; checkout</ion-icon>
+      </button>
+        <!-- <button class="amt-btn save" ion-button>
+            <span>Save</span>
+            <ion-icon name="ios-heart-outline"></ion-icon>
+          </button> -->
+      </div>
+  </ion-footer>
 
 </ion-content>

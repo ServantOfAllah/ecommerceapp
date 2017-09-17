@@ -19,19 +19,25 @@
       </ion-chip>
       <p class="itemPrice" [innerHTML]="product.price_html"></p>
       <!-- <h4>Categories:</h4> -->
-      
-    </ion-card>
 
-    <ion-list>
-        <ion-item>
-          <ion-label>Type</ion-label>
-          <ion-select [(ngModel)]="gaming">
-            <ion-option value="nes">Full</ion-option>
-            <ion-option value="n64">Half</ion-option>
-            <ion-option value="ps">Quarter</ion-option>
-          </ion-select>
-        </ion-item>
-    </ion-list>
+      <!-- <ion-list>
+          <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="gaming">
+              <ion-option value="nes">Full</ion-option>
+              <ion-option value="n64">Half</ion-option>
+              <ion-option value="ps">Quarter</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list> -->
+
+      <button ion-button color="danger" class="itemBtn" outline (click)="addToCart(object)">
+          <ion-icon name="cart"> add to cart</ion-icon>
+      </button>
+      <button ion-button color="primary" class="itemBtn" outline>
+          <ion-icon name="heart-outline"> save later</ion-icon>
+      </button>
+    </ion-card>
 
     <!-- <ion-list class="details" *ngFor="let product of productDetails" (click)="toggleDiv(product)">
       <ion-list-header no-lines>
@@ -44,30 +50,25 @@
       </ion-item>
     </ion-list> -->
 
-    <!-- <ion-grid>
-        <ion-row>
-          <ion-col>
-            1 of 3
-          </ion-col>
-          <ion-col>
-            2 of 3 (wider)
-          </ion-col>
-          <ion-col>
-            3 of 3
-          </ion-col>
-        </ion-row>
-        </ion-grid> -->
-
-      <ion-footer>
-          <div class="bottom_bar">
-            <button ion-button icon-left block color="topbar" class="amt-btn" (click)="addToCart(object)">
-              <ion-icon name="basket">&nbsp; add to cart</ion-icon>
-          </button>
-            <!-- <button class="amt-btn save" ion-button>
-                <span>Save</span>
-                <ion-icon name="ios-heart-outline"></ion-icon>
-              </button> -->
-          </div>
-      </ion-footer>
+      <!-- <ion-footer>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div class="bottom_bar">
+                  <button ion-button block icon-left color="topbar" class="amt-btn" (click)="addToCart(object)">
+                    <ion-icon name="basket">&nbsp; add to cart</ion-icon>
+                  </button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="bottom_bar">
+                  <button class="amt-btn save" ion-button>
+                    <ion-icon name="ios-heart-outline"> &nbsp; save</ion-icon>
+                  </button>
+                  </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-footer> -->
 
 </ion-content>

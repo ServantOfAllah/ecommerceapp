@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar color="topbar">
     <ion-title>Refreshing</ion-title>
-    <ion-fab top right (click)="goTocart()" >
-        <button ion-fab mini class="cart"><ion-icon name="basket"></ion-icon></button>
-    </ion-fab>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
+    <ion-fab top right edge (click)="goTocart()" >
+        <button ion-fab mini class="cart" color="danger"><ion-icon name="cart"></ion-icon></button>
+    </ion-fab>
     
   <ion-card id="main-card">
     <h1 class="card-title"></h1>
@@ -22,7 +22,9 @@
         <h2>{{product.title}}</h2>
         <p [innerHTML]="product.description"></p>
         <p class="item-title price" [innerHTML]="product.price"></p>
+        
       </ion-item>
-    </ion-card>
+      
+  </ion-card>
 
 </ion-content>

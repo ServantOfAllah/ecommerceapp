@@ -1,0 +1,66 @@
+<ion-header no-border-bottom>
+  <!-- <ion-navbar no-border-bottom>
+    <ion-title>
+      Sign up
+    </ion-title>
+  </ion-navbar> -->
+
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-segment [(ngModel)]="personal">
+      <ion-segment-button color="topbar" value="personal">
+        Personal
+      </ion-segment-button>
+      <ion-segment-button color="topbar" value="billing">
+        Billings
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="personal" class="main">
+    <ion-list *ngSwitchCase="'personal'" no-lines>
+      <ion-item>
+        <ion-label>First name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-item>
+          <ion-label>Mobile</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Confirm pasword</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'billing'">
+      <ion-item>
+        <ion-label>Address Line 1</ion-label>
+        <ion-textarea type="text" maxlength="100"></ion-textarea>>
+      </ion-item>
+      <ion-item>
+        <ion-label>Address Line 2</ion-label>
+        <ion-textarea type="text" maxlength="100"></ion-textarea>>
+      </ion-item>
+    </ion-list>
+  </div> 
+
+  <button ion-button color="topbar" full (click)="gotoHome()">PROCEED</button>
+</ion-content>

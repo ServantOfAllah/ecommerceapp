@@ -6,4 +6,19 @@ page-cart {
         background-color: #ef5350;
         font: #fff;
     }
+    .bottom_bar
+    {
+        position: fixed;
+        bottom: 0;
+        margin: 0;
+        width:100%;
+        font-weight: 300;
+    }
+    .inc{
+        display: inline-block;
+    }
+    .inc_p{
+        padding-top: 30px;
+        font-size: 1.5em;
+    }
 }

@@ -1,0 +1,36 @@
+page-signup {
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #ef5350;
+        opacity: 1;
+    }
+
+    .segment-ios .segment-button.activated, .segment-ios .segment-button.segment-activated {
+        border-color: #ef5350;
+        opacity: 1;
+    }
+
+    .segment-ios .segment-button.segment-activated {
+        color: #fff;
+        background-color: #ef5350;
+    }
+
+    .segment-ios .segment-button {
+        border-color: #ef5350;
+        color: #ef5350;
+    }
+
+    .button-full {
+        margin: 0 auto;
+        border-radius: 10px;
+        border-right-width: 0;
+        border-left-width: 0;
+        width: 80%;
+    }
+    .main{
+        margin: auto 0;
+    }
+    .segment-md .segment-button {
+        border-color: #ef5350;
+        color: #ef5350;
+    }
+}
